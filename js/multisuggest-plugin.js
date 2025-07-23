@@ -255,7 +255,7 @@
                 if (renderSource) {
                     //create the header text
                     li = $("<li>", {"class" : "msuggest-header"});
-                    li.append($("<span>", {"html" : dataSource.header}));
+                    li.append($("<span>", {"text" : dataSource.header})); // Sanitize by using text()
                     menu.append(li);
                 
                     //render the loading icon (if applicable)
@@ -320,7 +320,7 @@
             if (!items.length) {
                 var li = $("<li>", {"class" : "disabled"})
                                 .append($("<a>", {"class" : "muted",
-                                                   html : self.options.noResultsText}));
+                                                   text : self.options.noResultsText})); // Sanitize by using text()
                 ul.append(li);
             }
             else {
